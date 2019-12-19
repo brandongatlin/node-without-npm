@@ -42,7 +42,7 @@ Hound.prototype.nudge = async function nudge(question) {
         answer = await this.askQuestion(`${question} [Y/n]`);
 
         if (answer === '') {
-            return true;
+            answer = 'yes';
         }
 
         answer = answer.toLowerCase();
