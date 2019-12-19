@@ -42,7 +42,7 @@ Hound.prototype.nudge = async function nudge(question) {
         answer = await this.askQuestion(`${question} [Y/n]`);
 
         if (answer === '') {
-            answer = 'yes';
+            return true;
         }
 
         answer = answer.toLowerCase();
@@ -53,10 +53,9 @@ Hound.prototype.nudge = async function nudge(question) {
             break;
         }
     }
-    return answer;
 }
 
-Hound.prototype.mark = async function mark(input) {
+Hound.prototype.mark = function mark(input) {
     rl.write(input);
 }
 
